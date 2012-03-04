@@ -20,4 +20,12 @@ public class SavingsAccountTest {
         account.withdraw(75);
         assertThat(-75, equalTo(account.balance()));
     }
+
+    @Test
+    public void nextYear() {
+        SavingsAccount account = new SavingsAccount();
+        account.deposit(10000);
+        SavingsAccount nextYear = account.nextYear(10);
+        assertThat(nextYear.balance(), equalTo(11000));
+    }
 }
